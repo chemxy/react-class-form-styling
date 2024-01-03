@@ -6,9 +6,18 @@ export default function FormStyling() {
     const roles = ['student', 'teacher', 'professor', 'employee']
     const rolesOption = roles.map((role) => <option value={role}>{role}</option>)
 
+    function handleSubmit(event) {
+        event.preventDefault();
+
+        const fd = new FormData(event.target);
+        const data = Object.fromEntries(fd.entries());
+        data['source-select'] = fd.getAll("source-select");
+        console.log(data)
+    }
+
     return (
         <div>
-            <form className="my-form">
+            <form className="my-form" onSubmit={(event)=>handleSubmit(event)}>
                 <div className="form-header">
                     <h1 id="header" className="text-capitalize">welcome on board!</h1>
                     <p className="first-line-capitalize">we just need a little bit of data from you to get you
@@ -22,7 +31,7 @@ export default function FormStyling() {
                             <label id="email-label" className="text-uppercase">email</label>
                         </div>
                         <div>
-                            <input id="email-input" type="text" className="text-input"/>
+                            <input id="email-input" type="text" className="text-input" name="email"/>
                         </div>
                     </div>
 
@@ -32,7 +41,7 @@ export default function FormStyling() {
                                 <label id="password-label" className="text-uppercase">password</label>
                             </div>
                             <div>
-                                <input type="text" id="password-input" className="text-input"/>
+                                <input type="text" id="password-input" className="text-input" name="password"/>
                             </div>
                         </div>
                         <div>
@@ -40,7 +49,8 @@ export default function FormStyling() {
                                 <label id="confirm-password-label" className="text-uppercase">confirm password</label>
                             </div>
                             <div>
-                                <input type="text" id="confirm-password-input" className="text-input"/>
+                                <input type="text" id="confirm-password-input" className="text-input"
+                                       name="confirmpassword"/>
                             </div>
                         </div>
                     </div>
@@ -51,7 +61,7 @@ export default function FormStyling() {
                                 <label id="first-name-label" className="text-uppercase">first name</label>
                             </div>
                             <div>
-                                <input type="text" id="first-name-input" className="text-input"/>
+                                <input type="text" id="first-name-input" className="text-input" name="firstname"/>
                             </div>
                         </div>
                         <div>
@@ -59,7 +69,7 @@ export default function FormStyling() {
                                 <label id="last-name-label" className="text-uppercase">last name</label>
                             </div>
                             <div>
-                                <input type="text" id="last-name-input" className="text-input"/>
+                                <input type="text" id="last-name-input" className="text-input" name="lastname"/>
                             </div>
                         </div>
                     </div>
@@ -98,22 +108,22 @@ export default function FormStyling() {
                         <fieldset>
                             <legend className="text-uppercase">how did you find us?</legend>
                             <div className="checkbox-group">
-                                <input type="checkbox" id="source-select-google" name="source-select-google"
+                                <input type="checkbox" id="source-select-google" name="source-select"
                                        value="google" className="input-checkbox"></input>
                                 <label className="text-capitalize">google</label>
                             </div>
                             <div className="checkbox-group">
-                                <input type="checkbox" id="source-select-linkedin" name="source-select-linkedin"
+                                <input type="checkbox" id="source-select-linkedin" name="source-select"
                                        value="linkedin" className="input-checkbox"></input>
                                 <label className="text-capitalize">linkedin</label>
                             </div>
                             <div className="checkbox-group">
-                                <input type="checkbox" id="source-select-friend" name="source-select-friend"
+                                <input type="checkbox" id="source-select-friend" name="source-select"
                                        value="friend" className="input-checkbox"></input>
                                 <label className="text-capitalize">referred by friend</label>
                             </div>
                             <div className="checkbox-group">
-                                <input type="checkbox" id="source-select-other" name="source-select-other"
+                                <input type="checkbox" id="source-select-other" name="source-select"
                                        value="other" className="input-checkbox"></input>
                                 <label className="text-capitalize">other</label>
                             </div>
