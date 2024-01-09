@@ -1,5 +1,5 @@
 import rocketIcon from "../assets/rocket-icon.png";
-import '../App.css';
+import './FormStyling.css';
 
 export default function FormStyling() {
 

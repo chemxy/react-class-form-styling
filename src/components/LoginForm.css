@@ -1,0 +1,158 @@
+@import url(https://fonts.googleapis.com/css?family=Roboto);
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;500&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+    background-color: #fafafa;
+}
+
+.form-group {
+    position: relative;
+    padding: 15px 0 0;
+    margin-bottom: 50px;
+}
+
+.form-field {
+    width: 100%;
+    border: 0;
+    /*border: 1px solid #d2d2d2;*/
+    /*border-radius: 8px;*/
+
+    border-bottom: 3px solid #d2d2d2;
+    border-bottom-color: #32612d;
+    outline: 0;
+    font-size: 16px;
+    color: #212121;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+}
+
+.form-field::placeholder {
+    color: transparent;
+}
+
+.form-field:placeholder-shown ~ .form-label {
+    font-size: 16px;
+    cursor: text;
+    top: 20px;
+}
+
+label,
+.form-field:focus ~ .form-label {
+    position: absolute;
+    top: 8px;
+    display: block;
+    transition: 0.2s;
+    font-size: 12px;
+    color: #9b9b9b;
+
+    /*padding: 0 5px;*/
+    /*background-color: white;*/
+    /*margin-left: 10px;*/
+}
+
+.form-field:focus ~ .form-label {
+    color: #32612d;
+}
+
+
+.app {
+    width: 70%;
+    margin: auto;
+    margin-top: 10vh;
+    border-radius: 40px;
+    background-color: white;
+}
+
+.flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.flex-col {
+    display: flex;
+    flex-direction: column;
+}
+
+.left {
+    width: 35%;
+    border-radius: 40px;
+    /*border-bottom-right-radius: 40px;*/
+    height: 80vh;
+    background-image: url("../assets/image.png");
+}
+
+.right {
+    width: 40%;
+    margin-left: 10%;
+}
+
+.title {
+    margin-top: 60px;
+}
+
+.h1 {
+    font-size: 48px;
+    font-weight: bold;
+    color: #466d1d;
+    font-family: Ubuntu, serif;
+}
+
+.h2 {
+    font-size: 36px;
+    font-weight: lighter;
+    color: #354a21;
+    font-family: Roboto, serif;
+}
+
+.tabs {
+    justify-content: center;
+    margin: 30px auto;
+}
+
+.tab-button {
+    border: 0;
+    background: transparent;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 15px 10px 5px 10px;
+    margin-right: 20px;
+    color: #9b9b9b;
+}
+
+.tab-button-active {
+    border: 0;
+    font-size: 18px;
+    padding: 15px 10px 5px 10px;
+    border-bottom: 3px solid #354a21;
+    background: transparent;
+    margin-right: 20px;
+    color: #32612d;
+    font-weight: bold;
+}
+
+.tab-button:hover,
+.tab-button-active:hover {
+    cursor: pointer;
+}
+
+.buttons {
+    margin-top: 60px;
+}
+
+.button {
+    width: 100%;
+    padding: 12px 0;
+    border: 0;
+    background-color: #354a21;
+    border-radius: 6px;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.button:hover {
+    cursor: pointer;
+}
